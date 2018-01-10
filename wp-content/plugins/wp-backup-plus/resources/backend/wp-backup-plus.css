@@ -1,0 +1,24 @@
+/** General **/
+
+.wp-backup-plus-no-margin {
+	margin: 0;
+}
+
+.wp-backup-plus-meets {
+	color: green;
+}
+
+.wp-backup-plus-lacks {
+	color: red;
+}
+
+/** Specific **/
+
+#wp-backup-plus-backup-and-restore-page-title input {
+	position: relative;
+	top: -5px;
+}
+
+#wp-backup-plus-backup-status {
+	display: none;
+}

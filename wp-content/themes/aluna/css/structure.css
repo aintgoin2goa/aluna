@@ -1,0 +1,292 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ---------------------------------- GLOBAL ----------------------------------------- */
+
+body, html{
+	min-height:100%;
+	padding:0;
+	margin:0;
+}
+
+#body{
+	width:987px;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+}
+
+#header{
+	width:987px;
+	overflow:hidden;
+	position:relative;
+	height:120px;
+}
+
+#logo{
+	position:absolute;
+	left:30px;
+	top:0px;
+	height:91px;
+	width:334px;
+	margin:10px 0px 0px;
+}
+
+#strap{
+	position:absolute;
+	top:20px;
+	left:390px;
+	width:241px;
+	height:58px;
+	margin:0;
+}
+
+#tobereleased{
+	position:absolute;
+	right:15px;
+	top:50px;
+	width:350px;
+	height:30px;
+	margin:0;
+	text-align:right;
+}
+
+.homepage #tobereleased{
+	top:95px;	
+}
+
+#languages{
+	position:absolute;
+	right:15px;
+	top:0px;
+	width:255px;
+	overflow:hidden;
+}
+
+#languages a{
+	display:block;
+	float:left;
+	width:33px;
+	height:33px;
+	outline:none;
+}
+
+#languages a span{
+	display:none;	
+}
+
+#languages h4{
+	height:33px;
+	width:150px;
+	margin:0 5px 0 0;
+	float:left;
+}
+
+#nav{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	width:356px;
+}
+
+.homepage #nav{
+	position:absolute;
+	right:20px;
+	bottom:0px;
+}
+
+#nav li{
+	margin:0;
+	padding:0;
+}
+
+#nav li a{
+	display:block;
+	padding:0px 20px;
+	font-weight:bold;
+	letter-spacing:-2px;
+}
+
+#left-column #nav li a{
+	padding:0px 10px;	
+}
+
+#content{
+	padding:20px 20px 0 20px;
+	width:947px;
+	overflow:hidden;
+}
+
+.content-box{
+	padding:10px;
+}
+
+#footer{
+	clear:both;
+	margin:20px 0 0 0;
+	width:927px;
+	overflow:hidden
+}
+
+#footer .logo{
+	float:left;
+	margin-top:5px;
+	margin-right:10px;
+}
+
+#footer-right{
+	float:right;
+	width:336px;
+	margin:0;
+	text-align:right;
+}
+
+#left-column{
+	float:left;
+	width:336px;
+	margin-bottom:20px;
+}
+
+#left-column #nav{
+	padding:0;
+	width:336px;
+	margin-bottom:20px;
+}
+
+#right-column{
+	float:right;
+	width:551px;
+	margin-bottom:20px;
+}
+
+
+/* ---------------------------------- PAGES ----------------------------------------- */
+
+#slideshow{
+	width:545px;
+	height:361px;
+	border: solid #3F3420;
+	position:relative;
+	overflow:hidden;
+}
+
+#slideshow img{
+	position:absolute;
+	left:0;
+	top:0;
+	display:none;
+}
+
+#slideshow .first{
+	display:block;	
+}
+
+
+
+#header.homepage{
+	height:450px;
+}
+
+#youtube{
+	position:absolute;
+	width:549px;
+	height:309px;
+	left:20px;
+	top:122px
+}
+
+#home-left{
+float:left;
+width:551px;
+}
+
+#home-right{
+float:right;
+width:336px;
+}
+
+.home-left{
+	clear:left;
+	float:left;
+	width:551px;
+	margin-bottom:20px
+}
+
+.home-left h1{
+	margin-top:0;	
+}
+
+.home-left img, .home-right img, #left-column img{
+	float:right;
+	margin-left:10px;
+}
+#home-left .button img,  #home-right .button img, #left-column .button img{
+	float:none;
+	margin:0;
+}
+
+.home-right, .blog-right{
+	float:right;	
+	width:336px;
+	margin-bottom:20px;
+}
+
+.blog-right{
+clear:right;
+}
+
+#contact-form{
+	margin:1em 0;
+}
+
+#contact-form div{
+	padding:0.5em 0;
+}
+
+label, input.text{
+	display:block;
+}
+
+label{
+	float:left;
+	width:100px;
+}
+
+.errorMessage{
+	float:right;
+	width:450px;
+	color:#F00;
+	margin:0;
+}
+
+input.text{
+	width:545px;
+	padding:3px 3px;
+	clear:both;
+}
+
+textarea{
+	width:531px;
+	padding:3px 10px;
+	height:120px;
+	clear:both;
+}
+
+input.submit{
+	float:right;
+}
+
+#loader{
+	float:right;
+	display:none;
+}
+
+
+/* ---------------------------------- OVERRIDE ----------------------------------------- */
+
+.noBottom{
+	margin-bottom:0;
+}
+.noTop{
+	margin-top:0;
+}

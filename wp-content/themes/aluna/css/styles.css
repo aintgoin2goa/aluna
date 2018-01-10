@@ -1,0 +1,503 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/* ---------------------------------- TYPOGRAPHY ----------------------------------------- */
+
+@font-face {
+	font-family: CrimsonTextRoman;
+	src: url('../fonts/CrimsonText/crimson_text_roman-webfont.eot');
+	src: local('☺'), url('../fonts/CrimsonText/crimson_text_roman-webfont.ttf') format('truetype'), url('../fonts/CrimsonText/crimson_text_roman-webfont.svg#webfontRVAWpq2N') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: AvatarRegular;
+	src: url('../fonts/Avatar/avatar_font-webfont.eot');
+	src: local('☺'), url('../fonts/Avatar/avatar_font-webfont.woff') format('woff'), url('../fonts/Avatar/avatar_font-webfont.ttf') format('truetype'), url('../fonts/Avatar/avatar_font-webfont.svg#webfontkqFVS1y5') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: MidoMedium;
+	src: url('../fonts/Mido/Mido-webfont.eot');
+	src: local('☺'), url('../fonts/Mido/Mido-webfont.woff') format('woff'), url('../fonts/Mido/Mido-webfont.ttf') format('truetype'), url('../fonts/Mido/Mido-webfont.svg#webfonto3aStUbX') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: CharisSILRegular;
+	src: url('../fonts/Charis/CharisSILR-webfont.eot');
+	src: local('☺'), url('../fonts/Charis/CharisSILR-webfont.woff') format('woff'), url('../fonts/Charis/CharisSILR-webfont.ttf') format('truetype'), url('../fonts/Charis/CharisSILR-webfont.svg#webfontz5NOQMDe') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: CharisSILBold;
+	src: url('CharisSILB-webfont.eot');
+	src: local('☺'), url('../fonts/Charis/CharisSILB-webfont.woff') format('woff'), url('../fonts/Charis/CharisSILB-webfont.ttf') format('truetype'), url('../fonts/Charis/CharisSILB-webfont.svg#webfontvTDjhkes') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+    font-family: Mulan;
+    src: url('../fonts/Mulan/mulan-webfont.eot');
+    src: local('☺'), url('../fonts/Mulan/mulan-webfont.woff') format('woff'), url('../fonts/Mulan/mulan-webfont.ttf') format('truetype'), url('../fonts/Mulan/mulan-webfont.svg#mulanregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: FontAwesome;
+  src: url('../fonts/FontAwesome/fontawesome-webfont.eot?v=3.0.1');
+  src: url('../fonts/FontAwesome/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+    url('../fonts/FontAwesome/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+    url('../fonts/FontAwesome/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+	font-family:CrimsonTextRoman, Georgia, serif; 
+	font-size:16px;
+	color:#15180d;
+}
+
+h1, h2{
+	font-size:42px;
+	font-weight:normal;
+	color:#424d26;
+	margin-top:0;
+	margin-bottom:4px;
+	padding-bottom:4px;
+	border-bottom:1px dotted #404a1b;
+	line-height:1em;
+}
+
+h3{
+	font-size:28px;
+	color:#424d26;
+	font-weight:normal;
+	margin-top:3px;
+	margin-bottom:3px;
+}
+
+#left-column h3{
+	margin-top:0;	
+	border-bottom:1px dotted #404a1b;
+
+}
+
+h4{
+	font-size:20px;
+	color:#424d26;
+	font-weight:normal;
+}
+
+a{
+	text-decoration:none;
+	color:#424d26;
+	border-bottom:1px dotted #424d26;
+}
+
+h1 a, h2 a, h1 a:hover, h2 a:hover{
+border:0;
+}
+
+hr{
+	margin:1em 0;
+	width:100%;
+	height:1px;
+	background-color:#BCC9CF;
+	color:#BCC9CF;
+	border:0;
+	border-top:1px dotted #404a1b;
+}
+
+a:hover, a:focus, a:active{
+	outline:none;
+	color:#ffec05;
+	border-bottom:1px dotted #ffec05;
+}
+
+a.button, a.button img{
+	border:0;	
+}
+
+a img{
+	border:0;
+}
+
+a:hover img, a:focus img, a:active img{
+	opacity:0.8;
+}
+
+#logo a{
+	border:0;
+}
+
+#logo a:hover, #logo a:active, #logo a:focus{
+	border:0;
+}
+
+/* ---------------------------------- GLOBAL ----------------------------------------- */
+
+body{
+/*	background:url(../images/background.jpg) left top repeat;*/
+	background-image:-webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, rgb(168,186,196)),
+		color-stop(0.24, rgb(143,158,155)),
+		color-stop(1, rgb(69,78,35))
+	);
+	background-image:-moz-linear-gradient(
+		center top,
+		rgb(168,186,196) 0%,
+		rgb(143,158,155) 24%,
+		rgb(69,78,35) 100%
+	);
+	background-repeat:no-repeat;
+	filter:progid:DXImageTransform.Microsoft.Gradient(StartColorStr=#FFA7B9C3, EndColorStr=#FF454E23);
+	-ms-filter:progid:DXImageTransform.Microsoft.Gradient(StartColorStr=#FFA7B9C3, EndColorStr=#FF454E23);
+}
+
+#body{
+	background:url(../images/body-backgorund.png) left top repeat-y;
+}
+
+#strap{
+	/*background:url(../images/strap.png) left top no-repeat;*/
+	font-family:MidoMedium, Georgia, serif;
+}
+
+.spanish #strap{
+/*	background:url(../images/strap_spanish.png) left top no-repeat;	*/
+}
+
+#tobereleased{
+	font-family:CharisSILRegular, Georgia, serif; 
+	text-shadow: 0px 0px 2px #3e4327;
+	font-size:18px;	
+	line-height:1em;	
+}
+
+.homepage #tobereleased{
+	font-size:32px;
+	margin:-30px 0px 0px 0px;
+
+}
+.homepage #tobereleased a {border:none;}
+
+#languages h4{
+	font-family: CharisSILBold;
+
+}
+
+.spanish #languages h4{
+	/*background:url(../images/languages_spanish.png) left top no-repeat;*/
+}
+
+#languages a{
+	background-image:url(../images/flags.png);
+	border:0;
+	opacity:0.5
+}
+
+#languages a:hover, #languages a.active, #languages a:active, #languages a:focus{
+	opacity:1;	
+}
+
+#english{
+	background-position:0px 0px;	
+}
+
+#english:hover, #english.active{
+	background-position:0px -33px;	
+}
+
+
+#spanish{
+	background-position:-33px 0px;	
+}
+
+#spanish:hover, #spanish.active{
+	background-position:-33px -33px;	
+}
+
+
+#french{
+	background-position:-66px 0px;	
+}
+
+#french:hover, #french.active{
+	background-position:-66px -33px;	
+}
+
+#nav a, #strap, #languages h4{
+	font-family:CharisSILRegular, Georgia, serif; 
+	font-size:30px;
+	color:#424d26;
+	text-shadow: 0px 0px 1px #3e4327;
+	border:0;
+	line-height:1.2em;
+}
+
+#strap{
+	font-family:CharisSILRegular, Georgia, serif; 
+	text-shadow: 0px 0px 2px #3e4327;
+	font-size:24px;	
+	line-height:1em;
+}
+
+#languages h4{
+	font-size:24px;
+	text-align:right;
+}
+
+#nav a:hover, #nav a:focus, #nav a:active, #nav .current_page_item a, #nav .current_page_parent a{
+	color:#ffec05;	
+}
+
+.content-box{
+	background-color:#bccacf;
+}
+
+#footer{
+	font-size:14px;
+}
+
+#footer a{
+	color:#424d26;
+}
+
+
+/* ---------------------------------- PAGES ----------------------------------------- */
+#header.homepage{
+	background:url(../images/header_bg.jpg) left top no-repeat;
+}
+
+#youtube{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border:10px solid #bccacf;	
+}
+
+.homepage #nav{
+	background:url(../images/nav_bg.png) left top repeat;
+}
+
+#home-left img, #home-right img, #main-content img, #left-column img{
+	border:3px solid #3f3420;
+}
+
+.button img{
+	border:0 !important;
+}
+
+label{
+	font-size:18px;
+}
+
+input.text, textarea{
+	border:1px solid #424d26;
+	font-family:inherit;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-image:-webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(168,186,196)),
+		color-stop(1, rgb(147,161,161))
+	);
+	background-image:-moz-linear-gradient(
+		center bottom,
+		rgb(168,186,196) 0%,
+		rgb(147,161,161) 100%
+	);
+	font-size:18px;
+}
+/* ---------------------------------- OVERRIDE ----------------------------------------- */
+
+
+.border{
+	border:3px solid #3f3420;
+}
+
+.noUnderline{
+	border-bottom:0;
+	}
+	
+	.next-post{
+	float:right;
+	width:200px;
+	text-align:right;
+	}
+
+	.wp-paginate{
+	margin:0;
+	padding:0;
+	}
+	
+.wp-paginate li{
+float:left;
+display:inline;
+margin-left:5px;
+list-style-type:none;
+}	
+
+
+.wp-paginate a{
+border:0;
+}
+
+.boxa,.boxa:hover {text-decoration:none; color:#15180D; border-bottom:0px !important;}
+
+/* opt-in */
+
+
+
+#opt-in {
+    background: url("../images/nav_bg.png") repeat scroll left top transparent;
+	color: #FFFFFF !important;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: normal !important;
+    margin: 0 0 10px -20px;
+    padding:5px 10px;
+    width: 336px;
+	position:absolute;
+	right:20px;
+	top:40px}
+
+#opt-in table { margin:0px; padding:0px; line-height:normal}
+
+
+
+#opt-in td, #opt-in tr { margin:0px; padding:0px!important}
+
+
+
+#opt-in form {padding:0px; margin:0px auto!important; width:320px;}
+
+#opt-in legend {display:none}
+
+#opt-in fieldset { border:none; margin:0px; padding:0px;}
+
+
+
+#opt-in label {
+    color: #424D26;
+    font-family: CharisSILRegular,Georgia,serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0px;
+	margin:0px;
+	float:left;
+}
+
+
+
+
+
+#opt-in h1 {
+    font-family: CharisSILRegular,Georgia,serif;
+    font-size: 14px;
+    line-height: 18px;
+    text-shadow: 0 0 2px #3E4327;
+}
+
+
+
+
+
+#opt-in h3 {
+
+    color: #FFFFFF;
+
+    font-family: helvetica;
+
+    font-size: 15px !important;
+
+    font-weight: normal;
+
+    letter-spacing: normal;
+
+    line-height: 20px !important;
+
+    margin: 5px 0 8px !important;
+
+    text-shadow: 1px 2px 2px #333333;
+
+}
+
+
+
+#opt-in h3 strong { font-weight:bold!important}
+
+#opt-in p { margin:0px; padding:0px; line-height: normal; font-size:17px;}
+
+
+#opt-in .red { display:none;}
+#opt-in input {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #B7BDC9;
+	font-size: 10px;
+    float: left;
+    margin: 2px 0 4px !important;
+    padding: 1px 5px !important;
+    width: 200px !important;
+}
+
+#opt-in select {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #B7BDC9;
+    float: left;
+    font-size: 10px;
+    margin: 1px 0 4px !important;
+    padding: 1px 5px !important;
+    width: 210px !important;
+}
+#opt-in .submit { clear:both}
+#opt-in .submit input {
+    background: none repeat scroll 0 0 #3A421E;
+    border: medium none !important;
+    border-radius: 10px 10px 10px 10px;
+    color: #FFEC05;
+    cursor: pointer;
+    float: none;
+    font-family: georgia;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px !important;
+    margin: 1px auto 1px 100px !important;
+    padding: 2px !important;
+    width: 140px !important;
+}
+
+
+
+
+#opt-in a { color:#FFFFFF; text-decoration:none}
+
+
+
+#opt-in a:hover { text-decoration:underline}
+
+
+
+#opt-in li { color:#fff;}
+
+
+
+/* End Opt in */
