@@ -1,23 +1,27 @@
 === WP-Paginate ===
-Contributors: emartin24 
-Donate link: http://www.ericmmartin.com/donate/
+Contributors: maxfoundry, emartin24, AlanP57
 Tags: paginate, pagination, navigation, page, wp-paginate, comments, rtl, seo, usability
 Requires at least: 2.6.0 (2.7.0 for comments pagination)
-Tested up to: 3.2.1
-Stable tag: 1.2.4
-	
+Tested up to: 4.9
+Stable tag: 2.0.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 WP-Paginate is a simple and flexible pagination plugin which provides users with better navigation on your WordPress site.
 
 == Description ==
 
+= Latest News =
 WP-Paginate is a simple and flexible pagination plugin which provides users with better navigation on your WordPress site.
 
 In addition to increasing the user experience for your visitors, it has also been widely reported that pagination increases the SEO of your site by providing more links to your content.
 
+You can add custom CSS for your pagination links with the Custom CSS tab in WP-Paginate Settings.
+
 Starting in version 1.1, WP-Paginate can also be used to paginate post comments!
 
 Translations: http://plugins.svn.wordpress.org/wp-paginate/I18n (check the version number for the correct file)
-	
+
 == Installation ==
 
 *Install and Activate*
@@ -29,42 +33,78 @@ Translations: http://plugins.svn.wordpress.org/wp-paginate/I18n (check the versi
 *Implement*
 
 For posts pagination:
-1) Open the theme files where you'd like pagination to be used. Depending on your theme, this may be the `loop.php` file or the `index.php`, `archive.php` and `search.php` files. The `twentyeleven` theme places the pagination code in `functions.php` in the `twentyeleven_content_nav()` function.
+* Open the theme files where you'd like pagination to be used. Depending on your theme, this could be in a number of files, such as `index.php`, `archive.php`, `categories.php`, `search.php`, `tag.php`, or the `functions.php` file(s).The `twentyeleven` theme places the pagination code in `functions.php` in the `twentyeleven_content_nav()` function.
 
-2) Replace your existing `previous_posts_link()` and `next_posts_link()` code block with the following:
+Examples:
 
-	<?php if(function_exists('wp_paginate')) {
-		wp_paginate();
-	} ?>
+For the `Twenty Seventeen` theme, in `index.php`, replace:
 
-For the `twentyeleven_content_nav` theme, the new function would look like:
+	the_posts_pagination( array(
+		'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
+		'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
+	) );
 
-	function twentyeleven_content_nav( $nav_id ) {
-		global $wp_query;
+With:
 
-		if ( function_exists( 'wp_paginate' ) ) {
-			wp_paginate();
-		}
-		else {
-			if ( $wp_query->max_num_pages > 1 ) : ?>
-				<nav id="<?php echo $nav_id; ?>">
-					<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentyeleven' ); ?></h3>
-					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentyeleven' ) ); ?></div>
-					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?></div>
-				</nav><!-- #nav-above -->
-			<?php endif;
-		}
-	}
+	if(function_exists('wp_paginate')):
+		wp_paginate();	
+	else :
+		the_posts_pagination( array(
+			'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
+			'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
+		) );
+	endif;
 
+For the `Twenty Sixteen` theme, in `index.php`, replace:
+
+		the_posts_pagination( array(
+			'prev_text'          => __( 'Previous page', 'twentysixteen' ),
+			'next_text'          => __( 'Next page', 'twentysixteen' ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
+		) );
+
+With:
+
+		if(function_exists('wp_paginate')):
+			wp_paginate();	
+		else :
+			the_posts_pagination( array(
+				'prev_text'          => __( 'Previous page', 'twentysixteen' ),
+				'next_text'          => __( 'Next page', 'twentysixteen' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
+			) );
+		endif;
+
+For the `Twenty Fifteen` theme, in `index.php`, replace:
+
+			the_posts_pagination( array(
+				'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
+				'next_text'          => __( 'Next page', 'twentyfifteen' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
+			) );
+
+With:
+
+			if(function_exists('wp_paginate')):
+				wp_paginate();	
+			else :
+			the_posts_pagination( array(
+				'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
+				'next_text'          => __( 'Next page', 'twentyfifteen' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
+			) );
+		  endif;
 
 For comments pagination:
 1) Open the theme file(s) where you'd like comments pagination to be used. Usually this is the `comments.php` file.
 
 2) Replace your existing `previous_comments_link()` and `next_comments_link()` code block with the following:
 
-	<?php if(function_exists('wp_paginate_comments')) {
-		wp_paginate_comments();
-	} ?>
+    <?php if(function_exists('wp_paginate_comments')) {
+        wp_paginate_comments();
+    } ?>
 
 
 *Configure*
@@ -109,28 +149,64 @@ You can even control the current page and number of pages with:
 
 Example (also applies to `wp_paginate_comments()`):
 
-	<?php if(function_exists('wp_paginate')) {
-		wp_paginate('range=4&anchor=2&nextpage=Next&previouspage=Previous');
-	} ?>
+    <?php if(function_exists('wp_paginate')) {
+        wp_paginate('range=4&anchor=2&nextpage=Next&previouspage=Previous');
+    } ?>
 
 
 = How can I style the comments pagination differently than the posts pagination? =
 
 When calling `wp_paginate_comments()`, WP-Paginate adds an extra class to the `ol` element, `wp-paginate-comments`.
 
-This allows you to use the `.wp-paginate-comments` styles, already in `wp-paginate.css`, to override the default styles.
-
-== Screenshots ==
-
-1. An example of the WP-Paginate display using the default options and styling
-2. The WP-Paginate admin settings page
-
-
-== Upgrade Notice ==
-
-N/A
-
 == Changelog ==
+= 2.0.4 =
+* Removed trailing slash from pagination links
+
+= 2.0.3 =
+* Added neon pink button style
+
+= 2.0.2 =
+* Added new preset
+* Updated setting page screen shots
+
+= 2.0.1 =
+* fixed undefined index notices 
+
+= 2.0.0 =
+* Added new button styles
+* Added the ability to select the font
+* Updated the translation file
+* Added the ability to add pagination without editing theme files. This applies to posts but not to comments.
+* Added the ability to hide the standard theme pagination. This applies to posts but not to comments.
+* Added a review notice
+
+= 1.3.4=
+* Tested with WordPress 4.7.1
+
+= 1.3.3 =
+* Added settings tab for entering custom CSS code
+
+= 1.3.2 =
+* Tested with WordPress 4.7
+
+= 1.3.1 =
+* Fixed bug that prevented a wp-paginate.css stylesheet from loading from a child theme (reported by sunamumaya)
+* Tested plugin against WordPress 4.1
+
+= 1.3 =
+* Plugin ownership transfered to Studio Fuel (http://studiofuel.com) - no functional changes were made
+* Tested plugin against WordPress 4.0.1
+
+= 1.2.6 =
+* Removed final closing PHP tag
+  Github pull request via DeanMarkTaylor
+* Do not add the title element if the title is empty
+  Github pull request via Claymm / chaika-design
+
+= 1.2.5 =
+* Remove PHP4 support to resolve PHP Strict warning
+  Github pull request via DeanMarkTaylor
+* Test with latest version of WordPress
 
 = 1.2.4 =
 * Ensure pagination of posts when wp_paginate() is called
